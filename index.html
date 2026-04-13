@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production & Media Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="top-header">
+            <div class="brand">
+                <div class="logo"><i class="fa-solid fa-video"></i></div>
+                <h1>MediaOps <span>Planning</span></h1>
+            </div>
+            <div class="team-meta">
+                <span class="status-indicator live">🟢 Live Production</span>
+                <span class="date-chip" id="current-date">--</span>
+            </div>
+        </header>
+
+        <main class="media-grid">
+            
+            <!-- 1. Project Overview -->
+            <section class="card col-span-2">
+                <h2><i class="fa-solid fa-list-check"></i> Project Overview</h2>
+                <div class="content scroll-content" id="projects-container"></div>
+            </section>
+
+            <!-- 2. Editing Workflow Tracker -->
+            <section class="card col-span-2">
+                <h2><i class="fa-solid fa-bars-progress"></i> Editing Workflow</h2>
+                <div class="kanban-board" id="workflow-container">
+                    <div class="k-col"><h3>Raw Footage</h3><div class="k-items" id="kw-raw"></div></div>
+                    <div class="k-col"><h3>Editing</h3><div class="k-items" id="kw-edit"></div></div>
+                    <div class="k-col"><h3>Revision</h3><div class="k-items" id="kw-rev"></div></div>
+                    <div class="k-col"><h3>Final Output</h3><div class="k-items" id="kw-final"></div></div>
+                </div>
+            </section>
+
+            <!-- 3. Content Calendar -->
+            <section class="card col-span-2">
+                <h2><i class="fa-brands fa-square-instagram"></i> Content Calendar</h2>
+                <div class="content scroll-content" id="calendar-container"></div>
+            </section>
+
+            <!-- 4. Shooting Schedule -->
+            <section class="card col-span-2">
+                <h2><i class="fa-solid fa-camera"></i> Shooting Schedule</h2>
+                <div class="content scroll-content" id="schedule-container"></div>
+            </section>
+
+            <!-- 5. Task Assignments -->
+            <section class="card col-span-2">
+                <h2><i class="fa-solid fa-users-gear"></i> Task Assignments</h2>
+                <div class="content scroll-content" id="assignments-container"></div>
+            </section>
+
+            <!-- 6. To-Do List -->
+            <section class="card col-span-2">
+                <h2><i class="fa-regular fa-square-check"></i> Action Items</h2>
+                <div class="todo-input-wrap">
+                    <input type="text" placeholder="Add a new task...">
+                    <button><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <div class="content scroll-content" id="todo-container"></div>
+            </section>
+
+            <!-- 7. Progress Tracker -->
+            <section class="card col-span-1">
+                <h2><i class="fa-solid fa-chart-line"></i> Progress Tracker</h2>
+                <div class="content" id="progress-container"></div>
+            </section>
+
+            <!-- 8. Deadlines -->
+            <section class="card col-span-1">
+                <h2><i class="fa-solid fa-calendar-xmark"></i> Core Deadlines</h2>
+                <div class="content" id="deadlines-container"></div>
+            </section>
+
+            <!-- 9. Equipment Checklist -->
+            <section class="card col-span-1">
+                <h2><i class="fa-solid fa-toolbox"></i> Gear Checklist</h2>
+                <div class="content scroll-content" id="equipment-container"></div>
+            </section>
+
+            <!-- 10. Notes & Creative -->
+            <section class="card col-span-1">
+                <h2><i class="fa-solid fa-lightbulb"></i> Creative Concepts</h2>
+                <textarea class="notes-area" placeholder="Jot down video themes, transition ideas, and captions here..."></textarea>
+            </section>
+
+            <!-- 11. Team Comm Updates -->
+            <section class="card col-span-2">
+                <h2><i class="fa-regular fa-comments"></i> Team Feed</h2>
+                <div class="content scroll-content" id="comms-container"></div>
+            </section>
+
+            <!-- 12. Completed Projects -->
+            <section class="card col-span-2">
+                <h2><i class="fa-solid fa-film"></i> Recent Outputs</h2>
+                <div class="content" id="completed-container"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
